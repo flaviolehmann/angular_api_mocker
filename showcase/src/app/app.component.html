@@ -1,0 +1,44 @@
+<h1> Showcase </h1>
+
+<hr>
+<div>
+  <h4> API RESPONSE: </h4>
+  <p> {{ apiResponse }} </p>
+
+  <h3> LOGGER: </h3>
+  <p> {{ logger }} </p>
+</div>
+<hr>
+
+<div>
+  <form>
+    <div>
+      <label for="carIdInput"> Id </label>
+      <input #carIdInput [(ngModel)]="car.id" name="id">
+    </div>
+    <div>
+      <label for="carModelInput"> Model </label>
+      <input #carModelInput [(ngModel)]="car.model" name="model">
+    </div>
+    <div>
+      <label for="carYearInput"> Year </label>
+      <input #carYearInput [(ngModel)]="car.year" name="year">
+    </div>
+    <div>
+      <button type="button" (click)="onCreate()"> CREATE (POST /cars) </button>
+      <button type="button" (click)="onReadAll()"> READ ALL (GET /cars) </button>
+    </div>
+  </form>
+
+  <br>
+  <br>
+  <br>
+
+  <div>
+    <button (click)="onReadOne()"> READ ONE (GET /cars/:id)</button>
+    <button (click)="onUpdate()"> UPDATE (PUT /cars/:id) </button>
+    <button (click)="onDelete()"> DESTROY (DELETE /cars/:id) </button>
+  </div>
+
+</div>
+<hr>
